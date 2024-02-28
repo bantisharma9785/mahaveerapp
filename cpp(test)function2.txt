@@ -1,0 +1,293 @@
+Q.1. Write a program to print the sum of two numbers entered by user by
+defining your own function.
+-----------------------------
+#include <iostream>
+using namespace std;
+
+int getSum(int num1, int num2)
+{
+    return num1+num2;
+}
+int main()
+{
+   int num1,num2;
+   cout<<"Enter the two numbers :-";
+
+   cin>>num1>>num2;
+   
+   cout<<getSum(num1,num2);
+    return 0;
+}
+
+---------------------------------------------------------------------------------------
+Q.2. Define a function that returns the product of two numbers entered by user.
+---------------------
+#include<iostream>
+using namespace std;
+int getpro(int num1,int num2)
+{
+    return num1*num2;
+}
+int main()
+{
+    int num1,num2;
+    cout<<"Enter the two number:-";
+    
+    cin>>num1>>num2;
+    
+    cout<<getpro(num1,num2);
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------
+Q.3. Write a program to print the circumference and area of a circle of radius
+entered by user by defining your own function.
+----------------------
+
+#include<iostream>
+using namespace std;
+float getcircumference(float num1)
+{
+    return num1*2*3.14;
+}
+float getArea(float num1)
+{
+    return num1*num1*3.14;
+}    
+int main()
+{
+    float radius;
+    cout<<"Enter the radius";
+    cin>>radius;
+    
+    cout<<"circumference:-"<<getcircumference(radius);
+    cout<<"Area"<<getArea(radius);
+    return 0;
+}
+
+---------------------------------------------------------------------------------------
+Q.4. Define two functions to print the maximum and the minimum number
+respectively among three numbers entered by user.
+------------------------
+#include <iostream>
+using namespace std;
+
+int findMaximum(int num1, int num2, int num3) {
+    return max({num1, num2, num3});
+}
+
+int findMinimum(int num1, int num2, int num3) {
+    return min({num1, num2, num3});
+}
+
+int main() {
+    int num1, num2, num3;
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
+    cout << "Enter the third number: ";
+    cin >> num3;
+
+    cout << "The maximum number is: " << findMaximum(num1, num2, num3) << endl;
+    cout << "The minimum number is: " << findMinimum(num1, num2, num3) << endl;
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------
+Q.5. Define a program to find out whether a given number is even or odd.
+-----------------------------
+#include <iostream>
+using namespace std;
+
+bool isEven(int number) {
+    return number % 2 == 0;
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (isEven(number)) {
+        cout << number << " is an even number." << endl;
+    } else {
+        cout << number << " is an odd number." << endl;
+    }
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------
+Q.6. A person is elligible to vote if his/her age is greater than or equal to 18.
+Define a function to find out if he/she is elligible to vote.
+---------------------------
+#include <iostream>
+using namespace std;
+
+bool isEligibleToVote(int age) {
+    return age >= 18;
+}
+
+int main() {
+    int age;
+    cout << "Enter your age: ";
+    cin >> age;
+
+    if (isEligibleToVote(age)) {
+        cout << "You are eligible to vote." << endl;
+    } else {
+        cout << "You are not eligible to vote." << endl;
+    }
+
+    return 0;
+}
+
+
+--------------------------------------------------------------------------------
+Q.7. Define a function to find out if number is prime or not.
+---------------------
+#include <iostream>
+using namespace std;
+
+bool isPrime(int number) {
+    if (number <= 1)
+        return false;
+    
+    for (int i = 2; i * i <= number; ++i) {
+        if (number % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (isPrime(num)) {
+        cout << num << " is a prime number." << endl;
+    } else {
+        cout << num << " is not a prime number." << endl;
+    }
+
+    return 0;
+}
+
+
+--------------------------------------------------------------------------------
+Q.8.  Write a program which will ask the user to enter his/her marks (out of 100).
+Define a function that will display grades according to the marks entered as
+below:
+Marks Grade
+91-100 AA
+81-90 AB
+71-80 BB
+61-70 BC
+51-60 CD
+41-50 DD
+<=40 Fail
+---------------
+
+#include <iostream>
+using namespace std;
+
+void displayGrade(int marks) {
+    if (marks >= 91 && marks <= 100) {
+        cout << "Grade: AA" << endl;
+    } else if (marks >= 81 && marks <= 90) {
+        cout << "Grade: AB" << endl;
+    } else if (marks >= 71 && marks <= 80) {
+        cout << "Grade: BB" << endl;
+    } else if (marks >= 61 && marks <= 70) {
+        cout << "Grade: BC" << endl;
+    } else if (marks >= 51 && marks <= 60) {
+        cout << "Grade: CD" << endl;
+    } else if (marks >= 41 && marks <= 50) {
+        cout << "Grade: DD" << endl;
+    } else if (marks <= 40) {
+        cout << "Grade: Fail" << endl;
+    } else {
+        cout << "Invalid input for marks." << endl;
+    }
+}
+
+int main() {
+    int userMarks;
+    cout << "Enter your marks (out of 100): ";
+    cin >> userMarks;
+
+    displayGrade(userMarks);
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------
+Q.9.  Write a program to print the factorial of a number by defining a function
+---------------------
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    cout << "Factorial of " << number << " is: " << factorial(number) << endl;
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------
+Q.10.  Write a function that takes your date of birth in YYYY, MM and DD format
+(separated by spaces) as input as well as the current date, in same format,
+and calculates your age in years, months and days. You must check for leap
+years also. Write a separate function to check for leap year. 
+-----------------------------
+//leap year
+------------
+#include <iostream>
+using namespace std;
+
+bool isLeapYear(int year) {
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    int year;
+
+    cout << "Enter a year: ";
+    cin >> year;
+
+    if (isLeapYear(year)) {
+        cout << year << " is a leap year." << endl;
+    } else {
+        cout << year << " is not a leap year." << endl;
+    }
+
+    return 0;
+------------------------------------------------------------
+
